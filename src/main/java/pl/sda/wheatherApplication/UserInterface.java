@@ -11,11 +11,14 @@ public class UserInterface {
 
         while (true) {
             System.out.println("Startujemy z info p pogodzie, co chcesz zrobić?");
+            System.out.println("1. Nowy wpis");
             System.out.println("0. Kończymy na dziś");
 
             int option = scanner.nextInt();
 
             switch (option) {
+                case 1:
+                    break;
                 case 0:
                     return;
             }
