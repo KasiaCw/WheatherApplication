@@ -1,12 +1,7 @@
 package pl.sda.wheatherApplication;
 
-import lombok.RequiredArgsConstructor;
-import pl.sda.wheatherApplication.location.LocationController;
-
-
 import java.util.Scanner;
 
-@RequiredArgsConstructor
 public class UserInterface {
 
     private LocationController locationController;
