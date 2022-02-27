@@ -1,16 +1,18 @@
 package pl.sda.wheatherApplication.location;
 
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
+
 
 @Builder
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class LocationDTO {
 
-     Long id;
-     String city;
-     float longitude;
-     float latitude;
-     String country;
-     String region;
+     private Long id;
+     private String city;
+     private float longitude;
+     private float latitude;
+     private String country;
+     private String region;
 }

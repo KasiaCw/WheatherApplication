@@ -15,7 +15,7 @@ public class LocationController {
         try {
             LocationDTO requstBody = objectMapper.readValue(data,LocationDTO.class);
             LocationDTO savedLoction = locationService.createlocation(requstBody);
-            return objectMapper.writeValueAsString(requstBody);
+            return objectMapper.writeValueAsString(savedLoction);
         } catch (Exception e) {
             return String.format("{\"message\":\"%s\"}", e.getMessage());
         }

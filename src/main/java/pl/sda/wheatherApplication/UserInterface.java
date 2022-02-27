@@ -1,10 +1,13 @@
 package pl.sda.wheatherApplication;
 
-import java.util.Scanner;
+import lombok.RequiredArgsConstructor;
+import pl.sda.wheatherApplication.location.LocationController;
 
+import java.util.Scanner;
+@RequiredArgsConstructor
 public class UserInterface {
 
-    private LocationController locationController;
+    private final LocationController locationController;
     Scanner scanner = new Scanner(System.in);
 
     public void run() {
@@ -38,22 +41,22 @@ public class UserInterface {
 
     private String readLocationFromUser() {
         System.out.println("Podaj nazwę miasta: ");
-        String city = scanner.nextLine();
+        String city = scanner.next();
         System.out.println("Podaj długość georaficzną: ");
         float longitude = scanner.nextFloat();
         System.out.println("Podaj szerokość geograficzną: ");
         float latitude = scanner.nextFloat();
         System.out.println("Podaj Kraj: ");
-        String country = scanner.nextLine();
+        String country = scanner.next();
         System.out.println("Podaj region: ");
-        String region = scanner.nextLine();
-        String requestJson = """
+        String region = scanner.next();
+        return """
                 {
                        "city": "%s",
                        "longitude": %s,
                        "latitude": %s,
                        "country": "%s",
-                       "region": "%s",
+                       "region": "%s"
                 }
                 """.formatted(
                 city,
@@ -62,7 +65,6 @@ public class UserInterface {
                 country,
                 region
         );
-        return requestJson;
     }
 
 
